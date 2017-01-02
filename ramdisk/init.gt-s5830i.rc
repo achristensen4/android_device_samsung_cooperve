@@ -251,18 +251,15 @@ on property:sys.usb.config=rndis,dm
     setprop sys.usb.state $sys.usb.config
 
 service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
-    disabled
     oneshot
 
 service iprenew_bt-pan /system/bin/dhcpcd -n
-    disabled
     oneshot
     oneshot
 
 service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm --baudrate 3000000 --patchram /system/bin/BCM4330B1_002.001.003.0634.0652.hcd -d /dev/ttyS1
     user bluetooth
     group bluetooth net_bt_admin
-    disabled
 
 service gpsd /system/bin/glgps -c /system/etc/gps/glconfig4751.xml
     user gps
@@ -286,26 +283,21 @@ service memsicd /system/bin/memsicd
 service wpa_supplicant /system/bin/wpa_supplicant -dd -Dwext -ieth0 -c /data/misc/wifi/wpa_supplicant.conf
     socket wpa_eth0 dgram 660 wifi wifi
     group system wifi inet
-    disabled
     oneshot
 
 service dhcpcd_eth0 /system/bin/dhcpcd
-    disabled
     oneshot
 
 service iprenew_eth0 /system/bin/dhcpcd -n
-    disabled
     oneshot
 
 service wlandutservice /system/bin/wlandutservice
     group wifi net_raw net_admin system inet
-    disabled
     oneshot
 
 service get_macaddrs /system/bin/logwrapper /system/bin/get_macaddrs
     user root
     oneshot
-    disabled
 
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
