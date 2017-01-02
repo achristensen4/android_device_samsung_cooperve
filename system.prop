@@ -3,36 +3,35 @@
 #
 
 # Dalvik
-dalvik.vm.checkjni=false
+dalvik.vm.checkjni=true
 dalvik.vm.debug.alloc=0
-dalvik.vm.dexopt-data-only=1
+dalvik.vm.dexopt-data-only=0
 dalvik.vm.dexopt-flags=v=a,o=v,m=y,u=y
 dalvik.vm.execution-mode=int:jit
 dalvik.vm.heapgrowthlimit=36m
 dalvik.vm.heapsize=64m
-dalvik.vm.startheapsize=5m
+dalvik.vm.startheapsize=8m
 
 # Screen Rotation
-persist.sys.rotationanimation=false
+persist.sys.rotationanimation=true
 
 # RIL
 rild.libpath=/system/lib/libbrcm_ril.so
-ro.ril.disable.power.collapse=0 \
-ro.ril.gprsclass=10 \
-ro.ril.hsxpa=1 \
-ro.telephony.call_ring.delay=0 \
-ro.telephony.default_network=0 \
+ro.ril.disable.power.collapse=0
+ro.ril.gprsclass=10
+ro.ril.hsxpa=1
+ro.telephony.call_ring.delay=0
+ro.telephony.default_network=0
 ro.telephony.ril_class=samsung
 ro.telephony.ril.v3=icccardstatus,datacall,signalstrength,facilitylock
-mobiledata.interfaces=pdp0,eth0,gprs,ppp0
+mobiledata.interfaces=pdp0,gprs,ppp0
 	
 # Display
-ro.sf.lcd_density=160
-qemu.sf.lcd_density=160
+ro.sf.lcd_density=240
 
 # Wifi interface
 wifi.interface=eth0
-wifi.supplicant_scan_interval=15
+wifi.supplicant_scan_interval=120
 
 # USB / SD card
 persist.service.usb.setting=0
