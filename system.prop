@@ -31,7 +31,7 @@ ro.sf.lcd_density=240
 
 # Wifi interface
 wifi.interface=eth0
-wifi.supplicant_scan_interval=120
+wifi.supplicant_scan_interval=16
 
 # USB / SD card
 persist.service.usb.setting=0
