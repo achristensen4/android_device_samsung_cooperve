@@ -30,26 +30,21 @@ service wpa_supplicant /system/bin/wpa_supplicant \
     -ieth0 -Dwext -c/data/misc/wifi/wpa_supplicant.conf \
     -e/data/misc/wifi/entropy.bin -O/data/misc/wifi/sockets
     socket wpa_eth0 dgram 0660 wifi wifi
-    disabled
     oneshot
 
 service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
-    disabled
     oneshot
 
 service iprenew_eth0 /system/bin/dhcpcd -n
-    disabled
     oneshot
 
 service wlandutservice /system/bin/wlandutservice
-    disabled
     oneshot
 
 # get MAC Addresses via RIL for WiFi & BT
 service get_macaddrs /system/bin/logwrapper /system/bin/get_macaddrs
     user root
     oneshot
-    disabled
 
 on property:init.svc.ril-daemon=running
     start get_macaddrs
