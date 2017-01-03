@@ -14,11 +14,9 @@ on boot
     setprop ro.bt.bdaddr_path "/data/.nvmac_bt.info"
 
 service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
-    disabled
     oneshot
 
 service iprenew_bt-pan /system/bin/dhcpcd -n
-    disabled
     oneshot
 
 service hciattach /system/bin/brcm_patchram_plus \
@@ -27,5 +25,4 @@ service hciattach /system/bin/brcm_patchram_plus \
     --i2s=1,1,0,1 --no2bytes --tosleep 50000 /dev/ttyS1
     user bluetooth
     group bluetooth net_bt_admin
-    disabled
     oneshot
